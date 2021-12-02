@@ -34,3 +34,7 @@ main {
   height: 500px;
 }
 
+#label-content {
+  display: flex;
+  flex-direction: column;
+}

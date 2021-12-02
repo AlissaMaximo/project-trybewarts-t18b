@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Trybewarts</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,6 +39,36 @@
           <input type="radio" name="family" value="Frontend">Frontend
           <input type="radio" name="family" value="Backend">Backend
           <input type="radio" name="family" value="FullStack">Fullstack
+      <div>
+          <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
+          <input type="checkbox" value="HoFs">HoFs
+          <input type="checkbox" value="Jest">Jest
+          <input type="checkbox" value="Promises">Promises
+          <input type="checkbox" value="React">React
+          <input type="checkbox" value="SQL">SQL
+          <input type="checkbox" value="Python">Python
+      </div>
+      <div>
+          <label for="rate" id="label-rate">Como você avalia a Trybewarts?</label>
+        <input type="radio" name="rate" value="1">1
+        <input type="radio" name="rate" value="2">2
+        <input type="radio" name="rate" value="3">3
+        <input type="radio" name="rate" value="4">4
+        <input type="radio" name="rate" value="5">5
+        <input type="radio" name="rate" value="6">6
+        <input type="radio" name="rate" value="7">7
+        <input type="radio" name="rate" value="8">8
+        <input type="radio" name="rate" value="9">9
+        <input type="radio" name="rate" value="10">10
+      </div>
+      <div>
+          <label for="areadetexto" class="textarea">Deixe seu comentário: </label>
+          <textarea name="areadetexto" maxlength="500"></textarea>
+      </div>
+      <div>
+          <label for="checkbox" id="label-infos">Você concorda com o uso das informações acima?</label>
+          <input type="checkbox" name="checkbox" id="agreement">
+      </div>
     </form>
     <img src="images/trybewarts-colored.svg" id="trybewarts-forms-logo">
   </main>
