@@ -26,3 +26,12 @@ function checkBox() {
 }
 
 check.addEventListener('click', checkBox);
+
+function counter() {
+  const characterCounter = document.querySelector('#counter');
+  const textArea = document.querySelector('#textArea');
+  if (characterCounter.value <= textArea.length) {
+    characterCounter.innerText = characterCounter.value - textArea.length;
+  }
+}
+counter();
