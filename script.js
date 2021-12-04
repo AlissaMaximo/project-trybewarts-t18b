@@ -18,7 +18,6 @@ buttonLogin.addEventListener('click', login);
 // O type checkbox vem com um atributo de checked que retorna true ou falso.
 
 function checkBox() {
-  const check = document.querySelector('#agreement');
   if (check.checked === true) {
     buttonForm.disabled = false;
   } else {
@@ -28,18 +27,18 @@ function checkBox() {
 
 check.addEventListener('click', checkBox);
 
+// Alerta para quando tentar escrever mais do que 500 caracteres.
 function counter() {
   const characterCounter = document.querySelector('#counter');
   const commentMaxLength = 500;
 
   if (textArea.value.length <= textArea.maxLength) {
-    let finalLength = commentMaxLength - textArea.value.length;
+    const finalLength = commentMaxLength - textArea.value.length;
     characterCounter.innerText = finalLength;
   }
-  if (textArea.value.length == commentMaxLength) { //alerta para quando tentar escrever mais do que 500 caracteres.
+  if (textArea.value.length === commentMaxLength) {
     alert('Você chegou no limite máximo de caracteres!');
   }
-
 }
 
 textArea.addEventListener('keyup', counter);
