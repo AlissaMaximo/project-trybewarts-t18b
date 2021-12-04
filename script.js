@@ -3,6 +3,7 @@ const senha = document.querySelector('.senha');
 const buttonLogin = document.querySelector('.button');
 const check = document.querySelector('#agreement');
 const buttonForm = document.querySelector('#submit-btn');
+const textArea = document.querySelector('#textarea');
 
 function login() {
   if (email.value === 'tryber@teste.com' && senha.value === '123456') {
@@ -29,9 +30,16 @@ check.addEventListener('click', checkBox);
 
 function counter() {
   const characterCounter = document.querySelector('#counter');
-  const textArea = document.querySelector('#textArea');
-  if (characterCounter.value <= textArea.length) {
-    characterCounter.innerText = characterCounter.value - textArea.length;
+  const commentMaxLength = 500;
+
+  if (textArea.value.length <= textArea.maxLength) {
+    let finalLength = commentMaxLength - textArea.value.length;
+    characterCounter.innerText = finalLength;
   }
+  if (textArea.value.length == commentMaxLength) { //alerta para quando tentar escrever mais do que 500 caracteres.
+    alert('Você chegou no limite máximo de caracteres!');
+  }
+
 }
-counter();
+
+textArea.addEventListener('keyup', counter);
