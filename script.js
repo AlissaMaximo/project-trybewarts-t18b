@@ -42,3 +42,45 @@ function counter() {
 }
 
 textArea.addEventListener('keyup', counter);
+
+// Requisito 21
+
+function showInfo(event) {
+  // pegar os dados escritos pelo usuario
+  // criar elementos p. cada elemento p recebe o dado correspondente.
+  // enxertar o elemento preenchido no html.
+// o que for de várias opções pega pelo nome
+  event.preventDefault();
+  let divData = document.createElement('div');
+  let name = document.querySelector('#input-name').value;
+  let pFullName = document.createElement('p');
+  let lastName = document.querySelector('#input-lastname').value;
+  let email = document.querySelector('#input-email').value;
+  let pEmail = document.createElement('p');
+  let selectedHouse = document.querySelector('#house').value
+  let pSelectedHouse = document.createElement('p');
+  let family = document.querySelector('input[name=family]:checked').value;
+  let pFamily = document.createElement('p');
+  let content = document.querySelectorAll('input[class=cb-content]:checked');
+  let pContent = document.createElement('p');
+
+console.log(content);
+
+  pFullName.innerHTML = 'Nome completo: ' + name + ' ' + lastName;
+  pEmail.innerHTML = 'E-mail: ' + email;
+  pSelectedHouse.innerHTML = 'Casa: ' + selectedHouse;
+  pFamily.innerHTML = 'Família: ' + family;
+  pContent.innerHTML = content.toString();
+
+  document.body.appendChild(divData);
+  divData.appendChild(pFullName);
+  divData.appendChild(pEmail);
+  divData.appendChild(pSelectedHouse);
+  divData.appendChild(pFamily);
+  divData.appendChild(pContent);
+
+}
+
+buttonForm.addEventListener('click', showInfo)
+
+

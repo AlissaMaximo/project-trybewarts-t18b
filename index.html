@@ -22,12 +22,12 @@
   <main>
     <form id="evaluation-form">
       <div class="name-lastname">
-        <input type="text" id="input-name" placeholder="Nome">
-        <input type="text" id="input-lastname" placeholder="Sobrenome">
+        <input type="text" id="input-name" placeholder="Nome" class="validation">
+        <input type="text" id="input-lastname" placeholder="Sobrenome" class="validation">
       </div>
       <div>
-        <input type="email" id="input-email" placeholder="Email">
-        <select id="house" required>
+        <input type="email" id="input-email" placeholder="Email" class="validation">
+        <select id="house" class="validation" required>
           <option value="">Escolha uma casa </option>
           <option value="Gitnória" id="gitnoria-house">Gitnória</option>
           <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
@@ -36,17 +36,17 @@
         </select>
       </div>
         <label id="label-family" for="family">Qual sua família?</label>
-          <input type="radio" name="family" value="Frontend">Frontend
-          <input type="radio" name="family" value="Backend">Backend
-          <input type="radio" name="family" value="FullStack">Fullstack
+          <input type="radio" name="family" value="Frontend" >Frontend
+          <input type="radio" name="family" value="Backend" >Backend
+          <input type="radio" name="family" value="FullStack" >Fullstack
       <div>
           <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
-          <input type="checkbox" value="HoFs">HoFs
-          <input type="checkbox" value="Jest">Jest
-          <input type="checkbox" value="Promises">Promises
-          <input type="checkbox" value="React">React
-          <input type="checkbox" value="SQL">SQL
-          <input type="checkbox" value="Python">Python
+          <input type="checkbox" value="HoFs" class="cb-content">HoFs
+          <input type="checkbox" value="Jest" class="cb-content">Jest
+          <input type="checkbox" value="Promises" class="cb-content">Promises
+          <input type="checkbox" value="React" class="cb-content">React
+          <input type="checkbox" value="SQL" class="cb-content">SQL
+          <input type="checkbox" value="Python" class="cb-content">Python
       </div>
       <div>
           <label for="rate" id="label-rate">Como você avalia a Trybewarts?</label>
@@ -64,7 +64,7 @@
       <div>
         <p id="counter">500</p>
           <label for="areadetexto" class="textarea">Deixe seu comentário: </label>
-          <textarea id="textarea" name="areadetexto" maxlength="500"></textarea>
+          <textarea id="textarea" name="areadetexto" maxlength="500" class="validation"></textarea>
       </div>
       <div>
           <label for="checkbox" id="label-infos">Você concorda com o uso das informações acima?</label>
