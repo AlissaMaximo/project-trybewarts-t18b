@@ -51,25 +51,22 @@ function showInfo(event) {
   // enxertar o elemento preenchido no html.
 // o que for de várias opções pega pelo nome
   event.preventDefault();
-  let divData = document.createElement('div');
-  let name = document.querySelector('#input-name').value;
-  let pFullName = document.createElement('p');
-  let lastName = document.querySelector('#input-lastname').value;
-  let email = document.querySelector('#input-email').value;
-  let pEmail = document.createElement('p');
-  let selectedHouse = document.querySelector('#house').value
-  let pSelectedHouse = document.createElement('p');
-  let family = document.querySelector('input[name=family]:checked').value;
-  let pFamily = document.createElement('p');
-  let content = document.querySelectorAll('input[class=cb-content]:checked');
-  let pContent = document.createElement('p');
+  const divData = document.createElement('div');
+  const name = document.querySelector('#input-name').value;
+  const pFullName = document.createElement('p');
+  const lastName = document.querySelector('#input-lastname').value;
+  const email = document.querySelector('#input-email').value;
+  const pEmail = document.createElement('p');
+  const selectedHouse = document.querySelector('#house').value;
+  const pSelectedHouse = document.createElement('p');
+  const family = document.querySelector('input[name=family]:checked').value;
+  const pFamily = document.createElement('p');
+  const content = document.querySelectorAll('input[class=cb-content]:checked');
+  const pContent = document.createElement('p');
 
-console.log(content);
-
-  pFullName.innerHTML = 'Nome completo: ' + name + ' ' + lastName;
-  pEmail.innerHTML = 'E-mail: ' + email;
-  pSelectedHouse.innerHTML = 'Casa: ' + selectedHouse;
-  pFamily.innerHTML = 'Família: ' + family;
+  pFullName.innerHTML = `Nome completo: ${name} ${lastName}`;
+  pSelectedHouse.innerHTML = `Casa: ${selectedHouse}`;
+  pFamily.innerHTML = `Família: ${family}`;
   pContent.innerHTML = content.toString();
 
   document.body.appendChild(divData);
@@ -81,6 +78,4 @@ console.log(content);
 
 }
 
-buttonForm.addEventListener('click', showInfo)
-
-
+buttonForm.addEventListener('click', showInfo);
