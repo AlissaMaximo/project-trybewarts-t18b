@@ -43,39 +43,44 @@ function counter() {
 
 textArea.addEventListener('keyup', counter);
 
+function contentValues(content) {
+  let concatenations = '';
+  Object.values(content).forEach((cadaValor) => {
+    if (cadaValor.checked === true) {
+      concatenations += cadaValor.defaultValue;
+      if (cadaValor.checke !== concatenations[concatenations.length - 1]) {
+        concatenations += ', ';
+      }
+    }
+    // console.log(cadaValor);
+  });
+  // console.log(content);
+  return concatenations;
+}
+
 // Requisito 21
 
 function showInfo(event) {
-  // pegar os dados escritos pelo usuario
-  // criar elementos p. cada elemento p recebe o dado correspondente.
-  // enxertar o elemento preenchido no html.
-// o que for de várias opções pega pelo nome
   event.preventDefault();
-  const divData = document.createElement('div');
-  const name = document.querySelector('#input-name').value;
+  const firstName = document.querySelector('#input-name');
+  const lastName = document.querySelector('#input-lastname');
+  // const Email = document.querySelector('.email').value;
+  // const selectedHouse = document.querySelector('#house').value;
+  // const family = document.querySelector('input[name=family]:checked');
+  const content = document.querySelectorAll('.subject');
+  firstName.value = `Nome: ${firstName.value} ${lastName.value}`;
   const pFullName = document.createElement('p');
-  const lastName = document.querySelector('#input-lastname').value;
-  const email = document.querySelector('#input-email').value;
-  const pEmail = document.createElement('p');
-  const selectedHouse = document.querySelector('#house').value;
-  const pSelectedHouse = document.createElement('p');
-  const family = document.querySelector('input[name=family]:checked').value;
-  const pFamily = document.createElement('p');
-  const content = document.querySelectorAll('input[class=cb-content]:checked');
+  pFullName.innerText = firstName.value;
   const pContent = document.createElement('p');
+  pContent.innerText = `Matéria: ${contentValues(content)}`;
 
-  pFullName.innerHTML = `Nome completo: ${name} ${lastName}`;
-  pSelectedHouse.innerHTML = `Casa: ${selectedHouse}`;
-  pFamily.innerHTML = `Família: ${family}`;
-  pContent.innerHTML = content.toString();
-
-  document.body.appendChild(divData);
-  divData.appendChild(pFullName);
-  divData.appendChild(pEmail);
-  divData.appendChild(pSelectedHouse);
-  divData.appendChild(pFamily);
-  divData.appendChild(pContent);
-
+  const form = document.querySelector('#evaluation-form');
+  form.innerHTML = null;
+  form.appendChild(pFullName);
+  form.appendChild(pContent);
+  // pFamily.innerText = `Família: ${family.value}`;
+  // pEmail.innerText = `Email: ${Email}`;
+  // pContent.innerText = `Matérias: ${contentValues(content)}`;
 }
 
 buttonForm.addEventListener('click', showInfo);

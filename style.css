@@ -20,6 +20,7 @@
 form {
   display: flex;
   width: 675px;
+  align-content: center;
 }
 
 main {
