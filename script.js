@@ -15,8 +15,6 @@ function login() {
 
 buttonLogin.addEventListener('click', login);
 
-// O type checkbox vem com um atributo de checked que retorna true ou falso.
-
 function checkBox() {
   if (check.checked === true) {
     buttonForm.disabled = false;
@@ -27,7 +25,6 @@ function checkBox() {
 
 check.addEventListener('click', checkBox);
 
-// Alerta para quando tentar escrever mais do que 500 caracteres.
 function counter() {
   const characterCounter = document.querySelector('#counter');
   const commentMaxLength = 500;
@@ -52,21 +49,14 @@ function contentValues(content) {
         concatenations += ', ';
       }
     }
-    // console.log(cadaValor);
   });
-  // console.log(content);
   return concatenations;
 }
-
-// Requisito 21
 
 function showInfo(event) {
   event.preventDefault();
   const firstName = document.querySelector('#input-name');
   const lastName = document.querySelector('#input-lastname');
-  // const Email = document.querySelector('.email').value;
-  // const selectedHouse = document.querySelector('#house').value;
-  // const family = document.querySelector('input[name=family]:checked');
   const content = document.querySelectorAll('.subject');
   firstName.value = `Nome: ${firstName.value} ${lastName.value}`;
   const pFullName = document.createElement('p');
@@ -78,9 +68,6 @@ function showInfo(event) {
   form.innerHTML = null;
   form.appendChild(pFullName);
   form.appendChild(pContent);
-  // pFamily.innerText = `Família: ${family.value}`;
-  // pEmail.innerText = `Email: ${Email}`;
-  // pContent.innerText = `Matérias: ${contentValues(content)}`;
 }
 
 buttonForm.addEventListener('click', showInfo);
